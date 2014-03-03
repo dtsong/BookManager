@@ -1,6 +1,6 @@
 ## 67-272: BookManager 3 ##
 
-This is a lab project for 67-272: Application Design and Development.  The primary objectives of this lab are (1) to teach students how controllers work, (2) how to work with views and integrate [Foundation](http://foundation.zurb.com/) in their projects.  
+This is a lab project for 67-272: Application Design and Development.  The primary objectives of this lab are (1) to teach students how controllers work, and (2) how to work with views and integrate [Foundation](http://foundation.zurb.com/) in their projects.  
 
 In contrast with the first version of BookManager, this project assumes that this is for one publisher (in this case the infamous Acme Publishing, which is the favorite publisher for [Wile E. Coyote](http://decmod.diegoazeta.org/resources/1-Exercises/Acme-Catalog.jpg) and also a producer of great tech books).  In this case, Acme not only wants to track books and authors, but also wants to track books through the various stages of the publishing process: from the initial proposals to signing a contract with author(s) to finally publishing the book.
 
