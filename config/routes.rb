@@ -6,9 +6,9 @@ BookManager3::Application.routes.draw do
   
   # Additional routes we've created for this project
   get 'proposed' => 'books#proposed', as: :proposed_books
-  # build a route for 'contracted' as well ...
+  get 'contracted' => 'books#contracted', as: :contracted_books
   
   # Set the root url
-  root to: 'books#index'
+  root to: 'books#index', as: :home
 
 end
