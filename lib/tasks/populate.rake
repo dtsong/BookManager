@@ -5,9 +5,6 @@ namespace :db do
   task :populate => :environment do
     Rake::Task['db:migrate'].invoke
 
-    # Need two gems to make this work: faker & populator
-    # Docs at: http://populator.rubyforge.org/
-    require 'populator'
     # Docs at: http://faker.rubyforge.org/rdoc/
     require 'faker'
 
@@ -28,7 +25,8 @@ namespace :db do
     end
 
     # Step 3: add 50 authors to the system and associated books
-    Author.populate 50 do |author|
+    50.times do 
+      author = Author.new
       # get some fake data using the Faker gem
       author.first_name = Faker::Name.first_name
       author.last_name = Faker::Name.last_name
@@ -40,8 +38,7 @@ namespace :db do
         author.active = true
       end
       # set the timestamps
-      author.created_at = Time.now
-      author.updated_at = Time.now
+      author.save!
     end
 
     # Step 4: add some books to the system
