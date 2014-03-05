@@ -41,12 +41,14 @@ namespace :db do
       author.save!
     end
 
+    category_ids = Category.all.pluck(:id)
+
     # Step 4: add some books to the system
     books = [["The Little .NET Book",1],["The Little Agile Book",2],["The Little Android Book",3],["The Little Databases Book",4],["The Little Design Book",5],["The Little Java Book",6],["The Little PHP Book",7],["The Little Python Book",8],["The Little Rails Book",9],["The Little Ruby Book",10],["The Little Security Book",11],["The Little Testing Book",12],["The Little iOS Book",13],["The Secrets of .NET",1],["The Secrets of Agile",2],["The Secrets of Android",3],["The Secrets of Databases",4],["The Secrets of Design",5],["The Secrets of Java",6],["The Secrets of PHP",7],["The Secrets of Python",8],["The Secrets of Rails",9],["The Secrets of Ruby",10],["The Secrets of Security",11],["The Secrets of Testing",12],["The Secrets of iOS",13],["Programming .NET",1],["Programming Agile",2],["Programming Android",3],["Programming Databases",4],["Programming Design",5],["Programming Java",6],["Programming PHP",7],["Programming Python",8],["Programming Rails",9],["Programming Ruby",10],["Programming Security",11],["Programming Testing",12],["Programming iOS",13],[".NET for Idiots",1],["Agile for Idiots",2],["Android for Idiots",3],["Databases for Idiots",4],["Design for Idiots",5],["Java for Idiots",6],["PHP for Idiots",7],["Python for Idiots",8],["Rails for Idiots",9],["Ruby for Idiots",10],["Security for Idiots",11],["Testing for Idiots",12],["iOS for Idiots",13]]
     books.each do |book|
       b = Book.new
       b.title = book[0]
-      b.category_id = book[1]
+      b.category_id = category_ids[book[1] - 1]
       # decide book status
       book_status = 1+rand(6)
       if book_status == 1
