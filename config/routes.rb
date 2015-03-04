@@ -4,6 +4,7 @@ BookManager3::Application.routes.draw do
   resources :books
   # need routes for authors and categories ...
   resources :authors
+  resources :categories
   
   # Additional routes we've created for this project
   get 'proposed' => 'books#proposed', as: :proposed_books
