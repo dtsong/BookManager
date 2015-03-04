@@ -1,7 +1,7 @@
-<p>
-	<% for author in Author.active.alphabetical  %>
-	   <%= check_box_tag "book[author_ids][]", author.id, @book.authors.include?(author) %>
-		 <%= author.name %>
-	   <br />
-	<% end  %>
-</p>
+  <div>
+      <% for author in Author.active.alphabetical %>
+          <%= check_box_tag "book[author_ids][]", author.id, @book.authors.include?(author), {id: author.id} %>
+          <label for="<%= author.id %>"><%= author.name %></label>
+          <br />
+      <% end  %>
+  </div>
