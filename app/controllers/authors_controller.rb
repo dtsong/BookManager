@@ -43,7 +43,6 @@ class AuthorsController < ApplicationController
     redirect_to authors_url
   end
 
-
   private
 
   def author_params

@@ -12,4 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require materialize
 //= require_tree .
+
+  $(function(){
+    $(function(){
+      $(".dropdown-button").dropdown({ constrain_width: false });
+      $('select').material_select();
+    });
+  });
